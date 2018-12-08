@@ -10,19 +10,22 @@ class Provider extends Component {
         const res = await axios.get(`/providers/${provider_id}`)
         return res.data.data
     }
+    removeProvider = async id => {
+        await axios.delete(`/providers/${id}`)
+        this.props.history.push('/providers')
+    }
     async componentDidMount() {
         const provider = await this.getProvider()
-        console.log(provider)
         this.setState({ provider })
     }
     render() {
-        console.log('hello>')
         const { provider } = this.state;
         if (!provider) return <h2>Loading...</h2>;
         return(
             <div>
-                <h2>{provider.name}</h2>
-                <p>{provider.about}</p>
+                <h2>{provider.properties.name}</h2>
+                <p>{provider.properties.about}</p>
+                <button onClick={() => this.removeProvider(provider._id)}>Delete Provider</button>
             </div>
         )
     }

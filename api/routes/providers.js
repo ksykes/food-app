@@ -26,4 +26,27 @@ router.get('/:provider_id', async (req, res, next) => {
     }
 })
 
+router.delete('/:provider_id', async (req, res, next) => {
+    try {
+        const { provider_id } = req.params
+        const doc = await Provider.findByIdAndRemove(provider_id)
+        res.status(204).send({ data: [doc] })
+    } catch(e) {
+        next(e)
+    }
+})
+
+router.post('/', async (req, res, next) => {
+    try {
+        const { properties } = req.body
+        const doc = new Provider({ properties })
+        await doc.save()
+        res.status(200).send({
+            data: [doc]
+        })
+    } catch(e) {
+        next(e)
+    }
+})
+
 module.exports = router

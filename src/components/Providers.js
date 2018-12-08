@@ -23,7 +23,7 @@ class Providers extends Component {
                 <ul>
                     {this.state.providers.map(provider => 
                         <li key={provider._id}>
-                            <Link to={`/provider/${provider._id}`}>{provider.name}</Link>
+                            <Link to={`/provider/${provider._id}`}>{provider.properties.name}</Link>
                         </li>
                     )}
                 </ul>

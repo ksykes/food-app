@@ -18,7 +18,6 @@ const makeSeeds = async () => {
     // save all providers into the database
     await Promise.all(providers.map(provider => {
         var newProvider = new Provider(provider)
-        console.log(provider)
         return newProvider.save()
     }))
     // close the connection
