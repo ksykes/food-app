@@ -47,47 +47,47 @@ class AddProvider extends Component {
                     <fieldset>
                         <label>Contact Information</label>
                         <label htmlFor='address'>Address</label>
-                        <input type='number' name='coordinates' id='coordinates'/>
+                        <input onChange={this.handleChange} type='number' name='coordinates' id='coordinates'/>
                         <label htmlFor='phone'>Phone Number</label>
-                        <input type='tel' name='phone' id='phone'/>
+                        <input onChange={this.handleChange} type='tel' name='phone' id='phone'/>
                         <label htmlFor='email'>Email</label>
-                        <input type='email' name='email' id='email'/>
+                        <input onChange={this.handleChange} type='email' name='email' id='email'/>
                         <label htmlFor='website'>Website</label>
-                        <input type='text' name='website' id='website'/>
+                        <input onChange={this.handleChange} type='text' name='website' id='website'/>
                         <label htmlFor='facebook'>Facebook</label>
-                        <input type='text' name='facebook' id='facebook'/>
+                        <input onChange={this.handleChange} type='text' name='facebook' id='facebook'/>
                         <label htmlFor='twitter'>Twitter</label>
-                        <input type='text' name='twitter' id='twitter' />
+                        <input onChange={this.handleChange} type='text' name='twitter' id='twitter' />
                         <label htmlFor='instagram'>Instagram</label>
-                        <input type='text' name='instagram' id='instagram' />
+                        <input onChange={this.handleChange} type='text' name='instagram' id='instagram' />
                     </fieldset>
                     <fieldset>
                         <label>
-                            <input type='checkbox' name='certification'/>USDA Organic
+                            <input onChange={this.handleChange} type='checkbox' name='certification'/>USDA Organic
                         </label>
                         <label>
-                            <input type='checkbox' name='certification' />Canada Organic
+                            <input onChange={this.handleChange} type='checkbox' name='certification' />Canada Organic
                         </label>
                     </fieldset>
                     <fieldset>
                         <label>Are tours available?</label>
                         <label>
-                            <input type='radio' name='tours' />Yes
+                            <input onChange={this.handleChange} type='radio' name='tours' />Yes
                         </label>
                         <label>
-                            <input type='radio' name='tours' />No
+                            <input onChange={this.handleChange} type='radio' name='tours' />No
                         </label>
                     </fieldset>
                     <fieldset>
                         <label>Can products be purchased on-site?</label>
                         <label>
-                            <input type='radio' name='pos' />Yes
+                            <input onChange={this.handleChange} type='radio' name='pos' />Yes
                         </label>
                         <label>
-                            <input type='radio' name='pos' />No
+                            <input onChange={this.handleChange} type='radio' name='pos' />No
                         </label>
                     </fieldset>
-                    <input type='submit' value='Add Provider'/>
+                    <input onChange={this.handleChange} type='submit' value='Add Provider'/>
                 </form>
             </div>
         )
