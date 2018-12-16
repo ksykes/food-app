@@ -24,6 +24,8 @@ app.use((err, req, res, next) => {
     ];
 
     res.status(401).json({ errors });
+  } else {
+    res.status(500).json({ errors: [err] })
   }
 });
 
