@@ -8,17 +8,19 @@ class Providers extends Component {
         providers: []
     }
     getProviders = async () => {
-        const res = await axios.get('/providers')
+        const res = await axios.get('/api/providers')
         return res.data.data
     }
     async componentDidMount() {
+        console.log('hi')
         const providers = await this.getProviders()
         this.setState({ providers })
     }
     render() {
+        console.log('render')
         const { providers } = this.state
         if (!providers) return <h2>Loading...</h2>
-        return <div>
+        return (<div>
             <h2>Providers</h2>
             <ul>
               {this.state.providers.map(provider => (
@@ -31,7 +33,8 @@ class Providers extends Component {
             </ul>
             <Map providers={this.state.providers} />
             {console.log(this.state.providers)}
-          </div>;
+          </div>
+        )
     }
 }
 

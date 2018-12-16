@@ -61,7 +61,7 @@ class AddProvider extends Component {
         try {
             const properties = this.state
             await axios.get('')
-            await axios.post('/providers', { properties })
+            await axios.post('/api/providers', { properties })
             this.props.history.push('/providers')
         } catch (e) {
             console.error(e)

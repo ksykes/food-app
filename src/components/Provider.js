@@ -7,12 +7,12 @@ class Provider extends Component {
     }
     getProvider = async () => {
         const { provider_id } = this.props.match.params
-        const res = await axios.get(`/providers/${provider_id}`)
+        const res = await axios.get(`/api/providers/${provider_id}`)
         return res.data.data
     }
     removeProvider = async id => {
-        await axios.delete(`/providers/${id}`)
-        this.props.history.push('/providers')
+        await axios.delete(`/api/providers/${id}`)
+        this.props.history.push('/api/providers')
     }
     async componentDidMount() {
         const provider = await this.getProvider()
