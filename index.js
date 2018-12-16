@@ -3,11 +3,9 @@
 const server = require('./api/server')
 const mongoose = require('mongoose')
 
-// const { PORT, DB_URI } = require('./api/utils/constants')
-const MONGOOSE_URI = process.env.MONGODB_URI || config.MONGODB_URI;
-const API_PORT = process.env.PORT || config.PORT;
+const { PORT, DB_URI } = require('./api/utils/constants')
 
-server.listen(API_PORT, async () => {
-  await mongoose.connect(MONGOOSE_URI);
-    console.log(`App listening on port ${API_PORT}`);
+server.listen(PORT, async () => {
+  await mongoose.connect(DB_URI);
+    console.log(`App listening on port ${PORT}`);
 });
