@@ -20,6 +20,7 @@ const providers = [
                     twitter: 'https://twitter.com/cheznousfarms'
                 }
             ],
+            category: 'Farm',
             geometry: {
                 coordinates: [
                     41.628591,
@@ -43,6 +44,7 @@ const providers = [
                     facebook: 'https://www.facebook.com/chickabiddyacres',
                 }
             ],
+            category: 'Farm',
             geometry: {
                 coordinates: [
                     44.300720,
@@ -67,6 +69,7 @@ const providers = [
                     facebook: 'https://www.instagram.com/everdalefarm/'
                 }
             ],
+            category: 'Farm',
             geometry: {
                 coordinates: [
                     43.773155,
@@ -92,6 +95,7 @@ const providers = [
                     instagram: 'https://www.instagram.com/ignatiusguelph/'
                 }
             ],
+            category: 'Farm',
             geometry: {
                 coordinates: [
                     43.571059,

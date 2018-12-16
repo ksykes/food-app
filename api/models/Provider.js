@@ -8,7 +8,7 @@ const providerSchema = new Schema({
             required: true
         },
         certification: {
-            type: String
+            type: Array
         },
         products: {
             type: Array
@@ -33,6 +33,10 @@ const providerSchema = new Schema({
         },
         socialMedia: {
             type: Array
+        },
+        category: {
+            type: String,
+            required: true
         },
         geometry: {
             coordinates: {

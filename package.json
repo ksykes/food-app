@@ -7,24 +7,27 @@
     "@material-ui/icons": "^3.0.1",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
     "jsonwebtoken": "^8.3.0",
+    "mapbox-gl": "^0.52.0-beta.1",
     "mongoose": "^5.3.13",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "react-map-gl": "^4.0.5",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1"
   },
   "proxy": "http://localhost:3001/",
   "scripts": {
-    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "start": "concurrently --kill-others-on-fail –display-error-details \"npm run server\" \"npm run client\"",
     "server": "nodemon ./index.js --ignore src/",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "seeds": "node api/seeds/index.js"
+    "seeds": "node api/seeds/index.js",
+    "heroku-postbuild": "cd src && npm install --only=dev && npm install && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"

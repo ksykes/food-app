@@ -10,9 +10,9 @@ import Button from "@material-ui/core/Button";
 // import DialogContent from "@material-ui/core/DialogContent";
 // import DialogContentText from "@material-ui/core/DialogContentText";
 // import DialogActions from "@material-ui/core/DialogActions";
-import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
-import withRoot from "./withRoot";
+// import Typography from "@material-ui/core/Typography";
+// import { withStyles } from "@material-ui/core/styles";
+// import withRoot from "./withRoot";
 
 class App extends Component {
     state = {
