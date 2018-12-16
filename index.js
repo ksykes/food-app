@@ -5,7 +5,9 @@ const mongoose = require('mongoose')
 
 const { PORT, DB_URI } = require('./api/utils/constants')
 
-server.listen(PORT, async () => {
-  await mongoose.connect(DB_URI);
+server.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
+    mongoose.connect(DB_URI, (err) => {
+        console.log(err)
+    });
 });
