@@ -47,13 +47,10 @@ class Providers extends Component {
             }
         })
     }
-    componentDidMount() {
-        try {
-            const providers = this.getProviders()
-            this.setState({ providers })
+    async componentDidMount() {
+        const providers = await this.getProviders()
+        this.setState({ providers }), () => {
             this.sortProviders()
-        } catch(e) {
-            console.log(e)
         }
     }
     render() {
