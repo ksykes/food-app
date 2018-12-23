@@ -25,6 +25,7 @@ class Providers extends Component {
     }
     sortProviders = () => {
         this.state.providers.map(provider => {
+            console.log(this.state.providers)
             if (provider.properties.category === "Retailer") {
                 this.setState({ retailers: [...this.state.retailers, provider] })
             } if (provider.properties.category === "Bakery") {
@@ -46,10 +47,14 @@ class Providers extends Component {
             }
         })
     }
-    async componentDidMount() {
-        const providers = await this.getProviders()
-        this.setState({ providers })
-        this.sortProviders()
+    componentDidMount() {
+        try {
+            const providers = this.getProviders()
+            this.setState({ providers })
+            this.sortProviders()
+        } catch(e) {
+            console.log(e)
+        }
     }
     render() {
         const { providers } = this.state
