@@ -3,16 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Providers from './components/Providers'
 import Provider from './components/Provider'
 import AddProvider from './components/AddProvider'
-// MATERIAL-UI
-import Button from "@material-ui/core/Button";
-// import Dialog from "@material-ui/core/Dialog";
-// import DialogTitle from "@material-ui/core/DialogTitle";
-// import DialogContent from "@material-ui/core/DialogContent";
-// import DialogContentText from "@material-ui/core/DialogContentText";
-// import DialogActions from "@material-ui/core/DialogActions";
-// import Typography from "@material-ui/core/Typography";
-// import { withStyles } from "@material-ui/core/styles";
-// import withRoot from "./withRoot";
+import About from './components/About'
 
 class App extends Component {
     state = {
@@ -21,11 +12,19 @@ class App extends Component {
     render() {
         return (
             <Router>
-                <div className="App">
-                    <h1>Welcome to the foods app</h1>
-                    <Button color="primary">OK</Button>
-                    <h3>To see all the providers, <Link to='/providers'>click here</Link>.</h3>
-                    <h3>To add a new post, <Link to='/providers/add'>click here</Link>.</h3>
+                <div className="App container">
+                    <h1><Link to='/' class='text-success'>Food Finder</Link></h1>
+                    <h2>Find ethical sources for your groceries or dining out</h2>
+                    <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
+                        <ul className="nav">
+                            <li className="nav-item">
+                                <Link className='nav-link text-light' to='/providers'>Food Sources</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className='nav-link text-light' to='/providers/add'>Add a Food Source</Link>
+                            </li>
+                        </ul>
+                    </nav>
                     <Route path={"/provider/:provider_id"} render={
                         (props) => <Provider {...props} />
                     } />
@@ -33,6 +32,7 @@ class App extends Component {
                         <Route path={`/providers/add`} render={props => <AddProvider {...props} />} />
                         <Route exact path='/providers' component={Providers} />
                     </Switch>
+                    <Route exact path='/' component={About} />
                 </div>
             </Router>
         );
