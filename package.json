@@ -11,7 +11,7 @@
     "jquery": "^3.3.1",
     "jsonwebtoken": "^8.3.0",
     "mapbox-gl": "^0.52.0-beta.1",
-    "mongoose": "^5.3.13",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.18.9",
     "popper.js": "^1.14.6",
     "react": "^16.6.0",
